@@ -9,8 +9,12 @@ make -C /home/henry/suckless/dwm
 
 while true; do
 	# Power/Battery Status
-	DWM_BATTERY=$( cat /sys/class/power_supply/BAT0/capacity );
-	
+   	DWM_BATTERY=$( cat /sys/class/power_supply/BAT0/capacity )%;
+	if [ "$( cat /sys/class/power_supply/BAT0/status )" == "Charging" ]; then
+		DWM_BATTERY+=" +";
+	else
+		DWM_BATTERY+=" -";
+	fi;
 	# Wi-Fi eSSID
 	#if [ "$( cat /sys/class/net/enp0s3/operstate )" == "up" ]; then
 	#	DWM_ESSID=$( cat /sys/class/net/enp0s3/address); 
@@ -29,10 +33,8 @@ while true; do
 
 	# Overall output command
 	#xsetroot -name="WiFi: [$DWM_ESSID] | HDD:[$DWM_HDDFREE] | UPDATES: [$DWM_UPDATES] | Power: [$DWM_BATTERY] | Vol: $DWM_VOL | $DWM_CLOCK"; 
-	xsetroot -name "$DWM_BATTERY | $DWM_UPDATES | $DWM_CLOCK";
-	sleep 1s;
-done &
-
+	xsetroot -name "| $DWM_BATTERY | $DWM_UPDATES | $DWM_CLOCK";
+	sleep 1s; done & 
 exec /home/henry/suckless/dwm/dwm
 
 #sxhkd &
