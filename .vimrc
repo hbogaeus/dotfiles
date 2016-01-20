@@ -19,15 +19,17 @@ set background=dark
 let g:solarized_termcolors=256
 " colorscheme solarized
 
-set nu				" set linenumber
-set tabstop=4 		" number of visual spaces per TAB
+set nu							" set linenumber
+set tabstop=2				" number of visual spaces per TAB
 set softtabstop=4 	" number of spaces in tab when editing
-set shiftwidth=4	" number of spaces in when autoindent
-set autoindent		" copy indentation from previous line
-set showcmd 		" show command in bottom bar
-set showmatch		" highlight matching bracket
-set lazyredraw		" redraw only when we need to
-set cursorline		" highlight current line
+set shiftwidth=4		" number of spaces in when autoindent
+set autoindent			" copy indentation from previous line
+set showcmd					" show command in bottom bar
+set showmatch				" highlight matching bracket
+set lazyredraw			" redraw only when we need to
+set cursorline			" highlight current line
+set title						" show title of file 
+set scrolloff=3			" start scroll 3 lines before off screen
 
 imap jj <Esc>
 
@@ -37,9 +39,9 @@ nnoremap k gk
 
 " Unbinds the arrow keys
 for prefix in ['i', 'n', 'v']
-	for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-		exe prefix."noremap".key." <Nop>"
-	endfor
+		for key in ['<Up>', '<Down>', '<Left>', '<Right>']
+				exe prefix."noremap".key." <Nop>"
+		endfor
 endfor
 
 " Settings for Syntastic
