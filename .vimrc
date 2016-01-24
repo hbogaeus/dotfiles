@@ -9,14 +9,16 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-airline'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
 
 " Own settings
 syntax enable
+colorscheme gruvbox
 set background=dark
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 " colorscheme solarized
 
 set nu							" set linenumber

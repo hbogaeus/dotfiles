@@ -1,9 +1,13 @@
 URxvt.scrollBar: false
 URxvt.intensityStyles: false
+URxvt.perl-ext-common: resize-font
+
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
 
 ! font
 ! URxvt*font: xft:Inconsolata:size=10:antialias=true:hinting=true
-URxvt.font: xft:Source Code Pro:Regular:size=10:antialias=true:hinting=true
+URxvt.font: xft:Source Code Pro:Regular:size=9:antialias=true:hinting=true
 
 ! terminal padding
 URxvt.internalBorder: 5
