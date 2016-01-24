@@ -23,8 +23,8 @@ set background=dark
 
 set nu							" set linenumber
 set tabstop=2				" number of visual spaces per TAB
-set softtabstop=4 	" number of spaces in tab when editing
-set shiftwidth=4		" number of spaces in when autoindent
+set softtabstop=2 	" number of spaces in tab when editing
+set shiftwidth=2		" number of spaces in when autoindent
 set autoindent			" copy indentation from previous line
 set showcmd					" show command in bottom bar
 set showmatch				" highlight matching bracket
@@ -59,4 +59,4 @@ let g:syntastic_c_checkers = ['gcc']
 
 " Settings for airline
 set laststatus=2
-let g:airline_theme='wombat'
+let g:airline_theme='gruvbox'

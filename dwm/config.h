@@ -2,7 +2,7 @@
 
 /* appearance */
 static const char *fonts[] = {
-	"Source Code Pro:Regular:size=11:antialias=true:hinting=true"
+	"Source Code Pro:Regular:size=10:antialias=true:hinting=true"
 	"Inconsolata:size=11:antialias=true:hinting:true"
     "DejaVu Sans Mono:size=10.5",
     "Terminus:size=10.5",
@@ -27,7 +27,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "term", "2", "3", "web"};
+static const char *tags[] = { "I", "II", "III", "IV"};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -35,7 +35,7 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Chromium",  NULL,       NULL,       1 << 3,       False,       -1 },
+	{ "chromium",  NULL,       NULL,       1 << 3,       False,       -1 },
 };
 
 /* layout(s) */
