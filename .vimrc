@@ -25,13 +25,16 @@ set nu							" set linenumber
 set tabstop=2				" number of visual spaces per TAB
 set softtabstop=2 	" number of spaces in tab when editing
 set shiftwidth=2		" number of spaces in when autoindent
-set autoindent			" copy indentation from previous line
+"set autoindent			" copy indentation from previous line
 set showcmd					" show command in bottom bar
 set showmatch				" highlight matching bracket
 set lazyredraw			" redraw only when we need to
 set cursorline			" highlight current line
 set title						" show title of file 
 set scrolloff=3			" start scroll 3 lines before off screen
+
+filetype indent plugin on
+
 
 imap jj <Esc>
 
