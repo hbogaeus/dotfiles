@@ -32,6 +32,7 @@ set lazyredraw			" redraw only when we need to
 set cursorline			" highlight current line
 set title						" show title of file 
 set scrolloff=3			" start scroll 3 lines before off screen
+set cc=80						" colorize column 80
 
 filetype indent plugin on
 

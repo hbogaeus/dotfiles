@@ -1,5 +1,9 @@
+# Set keymap
 setxkbmap se
+
 /usr/bin/VBoxClient-all
+
+#Set background
 #feh --bg-fill ~/images/gold-bokeh.jpg
 make -C /home/henry/suckless/dwm
 
@@ -7,14 +11,15 @@ make -C /home/henry/suckless/dwm
  
 #fswebcam -q --no-banner -r 1280x720 ~/images/login/$(date +%Y-%d-%m_%H-%M).jpg &
 
+
 while true; do
 	# Power/Battery Status
-   	DWM_BATTERY=$( cat /sys/class/power_supply/BAT0/capacity )%;
-	if [ "$( cat /sys/class/power_supply/BAT0/status )" == "Charging" ]; then
-		DWM_BATTERY+=" +";
-	else
-		DWM_BATTERY+=" -";
-	fi;
+#   	DWM_BATTERY=$( cat /sys/class/power_supply/BAT0/capacity )%;
+#	if [ "$( cat /sys/class/power_supply/BAT0/status )" == "Charging" ]; then
+#		DWM_BATTERY+=" +";
+#	else
+#		DWM_BATTERY+=" -";
+#	fi;
 	# Wi-Fi eSSID
 	#if [ "$( cat /sys/class/net/enp0s3/operstate )" == "up" ]; then
 	#	DWM_ESSID=$( cat /sys/class/net/enp0s3/address); 
