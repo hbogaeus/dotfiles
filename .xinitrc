@@ -1,7 +1,7 @@
 # Set keymap
 setxkbmap se
 
-/usr/bin/VBoxClient-all
+VBoxClient --display
 
 #Set background
 #feh --bg-fill ~/images/gold-bokeh.jpg
@@ -44,6 +44,8 @@ done &
 chromium &
 urxvt &
 exec /home/henry/suckless/dwm/dwm
+
+#exec awesome
 
 #sxhkd &
 #exec bspwm
