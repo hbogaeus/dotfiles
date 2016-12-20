@@ -1,0 +1,25 @@
+#! /bin/sh
+
+sxhkd &
+redshift &
+chromium-browser &
+unclutter -idle 2 &
+
+bspc monitor -d I II III IV V
+
+bspc config top_padding					 22 
+bspc config border_width         1
+bspc config window_gap					 0 
+bspc config focused_border_color \#EC4612
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config click_to_focus			 true
+bspc config single_monocle			 true
+
+bspc rule -a chromium-browser desktop='^2'
+bspc rule -a spotify desktop='^3'
+bspc rule -a Screenkey manage=off
+
+panel | lemonbar -g 1366x22+0+0 &
