@@ -11,9 +11,9 @@ alias ls='ls -aF --color=auto'
 alias rm='rm -I'
 alias kista='ssh bogaeus@shell.it.kth.se'
 alias uptime='uptime -p'
-alias poweroff='uptime;sleep 2;poweroff'
-alias reboot='uptime;sleep 2;reboot'
-alias update='sudo pacman -Syu'
+alias weather='curl wttr.in'
+alias cal='ncal -b'
+alias hibernate='sudo systemctl hibernate'
 
 PS1='\u \w\$ '
 

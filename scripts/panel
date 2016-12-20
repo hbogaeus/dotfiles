@@ -1,0 +1,64 @@
+#!/bin/sh
+
+clock() {
+	date '+%a %d/%m-%Y %H:%M:%S'
+}
+
+brightness() {
+	VALUE=$(xbacklight -get)
+	printf "%.f" "$VALUE"
+}
+
+battery() {
+	BATC=/sys/class/power_supply/BAT1/capacity
+	BATS=/sys/class/power_supply/BAT1/status
+
+	test "`cat $BATS`" = "Charging" && echo -n '+' || echo -n '-'
+
+	sed -n p $BATC 
+}
+
+vol() {
+	amixer get Master | grep 'Mono:' | awk '{print $3}'
+}
+
+nowplaying() {
+	STATUS=$(sp playing | awk '{print $3}' | tr -d '\"')
+	#echo $STATUS
+	sp current | grep Title | cut -d' ' -f3- 
+	echo ' | '
+	sp current | grep ^Artist | cut -d' ' -f3-
+}
+
+cpu() {
+	uptime | awk '{print $10}'
+	#ps -eo pcpu | awk 'BEGIN {sum=0.0f} {sum+=$1} END {print sum}'
+}
+
+ssd() {
+	df -h | grep sda1 | awk '{print $2}'
+}
+
+cur_desktop() {
+	xprop -root _NET_CURRENT_DESKTOP | awk '{print $3}'
+}
+
+f_orange='%{F#EC4612}'
+f_red='%{F#DE1C22}'
+f_reset='%{F-}'
+
+while :; do
+	buf="%{l}"
+	# Updates are to slow to be useful
+	#buf="${buf} ${f_orange}[${f_reset}$(cur_desktop)${f_orange}]"
+	buf="${buf} %{r}"
+	buf="${buf} ${f_orange}MUSIC${f_reset} $(nowplaying)"
+	#buf="${buf} ${f_orange}BRI${f_reset} $(brightness)%"
+	buf="${buf} ${f_orange}VOL${f_reset} $(vol)%"
+	buf="${buf} ${f_orange}SSD${f_reset} $(ssd)"
+	buf="${buf} ${f_orange}CPU${f_reset} $(cpu)"
+	buf="${buf} ${f_orange}PWR${f_reset} $(battery)%"
+	buf="${buf} ${f_orange}CLK${f_reset} $(clock)"
+	echo $buf
+	sleep 1 
+done

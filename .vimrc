@@ -9,7 +9,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'bling/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'rust-lang/rust.vim'
+Plugin 'elixir-lang/vim-elixir'
 
 call vundle#end()
 filetype plugin indent on
@@ -33,15 +36,21 @@ set cursorline			" highlight current line
 set title						" show title of file 
 set scrolloff=3			" start scroll 3 lines before off screen
 set cc=80						" colorize column 80
+set hlsearch
 
 filetype indent plugin on
 
-
 imap jj <Esc>
+
 
 " Fix line warping
 nnoremap j gj
 nnoremap k gk
+
+
+" Turn highlight search off with space
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
 
 " Unbinds the arrow keys
 for prefix in ['i', 'n', 'v']
@@ -50,7 +59,7 @@ for prefix in ['i', 'n', 'v']
 		endfor
 endfor
 
-" Settings for Syntastic
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -60,7 +69,19 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_asm_checkers = ['nasm']
+let g:syntastic_rust_checkers = ['rustc']
+" Elixir checker is slow..
+" let g:syntastic_elixir_checkers = ['elixir']
 
-" Settings for airline
+" Required for checking elixir
+" Can be security risk as it runs the code when checking
+"let g:syntastic_enable_elixir_checker = 1
+
+" Airline
 set laststatus=2
 let g:airline_theme='gruvbox'
+
+" CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'

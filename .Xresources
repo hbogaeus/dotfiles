@@ -6,14 +6,19 @@ URxvt.resize-font.smaller: C-Down
 URxvt.resize-font.bigger: C-Up
 
 ! font
-! URxvt*font: xft:Inconsolata:size=10:antialias=true:hinting=true
-URxvt.font: xft:Source Code Pro:Regular:size=9:antialias=true:hinting=true
+! URxvt*font: xft:Fantasque Sans Mono:Regular:size=9:antialias=true:hinting=true
+! URxvt*font: xft:Inconsolata:size=8:antialias=true:hinting=true
+URxvt*font: xft:Inconsolata:size=8:antialias=false:hinting=false
+! URxvt.font: xft:Source Code Pro:Regular:size=9:antialias=true:hinting=true
 
 ! terminal padding
 URxvt.internalBorder: 5
 
-! URxvt.transparent:	true
-! URxvt.shading:		15
+! Make it blurry
+URxvt.transparent:	true
+! URxvt.shading:			50	
+URxvt.blurRadius:		7
+! URxvt.fading:				20
 
 ! make otf / ttf fonts look pretty.  does not matter if you are using a bitmap font.
 Xft.autohint: 0
@@ -22,7 +27,6 @@ Xft.hintstyle:  hintfull
 Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
-
 
 ! colors
 *.cursorColor:  #ebdbb2
