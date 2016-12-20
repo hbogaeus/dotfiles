@@ -8,6 +8,7 @@
 alias cal='cal -m'
 alias grep='grep -n --color=auto'
 alias ls='ls -aF --color=auto'
+alias cls='clear'
 alias rm='rm -I'
 alias kista='ssh bogaeus@shell.it.kth.se'
 alias uptime='uptime -p'
