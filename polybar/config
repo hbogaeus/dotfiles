@@ -1,0 +1,85 @@
+[colors]
+background = #282828
+primary = #EBDBB2 
+secondary = #E39453
+
+spotify-underline = 
+
+[bar/laptop]
+width = 100%
+height = 24
+
+module-margin = 1
+
+padding-left = 1
+padding-right = 1
+underline-size = 1
+
+background = ${colors.background}
+foreground = ${colors.primary}
+
+font-0 = Input:size=8;0
+font-1 = Siji;1
+
+locale = sv_SE.UTF-8
+
+modules-left = i3 wireless
+modules-center = spotify
+modules-right =  filesystem volume memory cpu battery date
+
+[module/battery]
+type = internal/battery
+full-at = 99
+battery = BAT1
+adapter = ADP1
+label-charging = %{T2}%{T-}%percentage:2%% 
+label-discharging = %{T2}%{T-}%percentage:2%% 
+
+[module/date]
+type = internal/date
+interval = 1.0
+date = %a %b %d
+time = %H:%M
+label = %{T2}%{T-}%date% %{T2}%{T-}%time%
+
+[module/i3]
+type = internal/i3
+enable-scroll = false
+label-focused-underline = ${colors.secondary}
+pin-workspaces = true
+strip-wsnumbers = true
+
+[module/cpu]
+type = internal/cpu
+label = %{T2}%{T-}%percentage:3%% 
+
+[module/memory]
+type = internal/memory
+label = %{T2}%{T-}%percentage_used:3%%
+
+[module/wireless]
+type = internal/network
+interface = wlp1s0
+label-connected = %essid% (%local_ip%) 
+format-disconnected = Not Connected
+format-connected = <label-connected> <ramp-signal>
+ramp-signal-0 = 0
+ramp-signal-1 = %{T2}%{T-}
+ramp-signal-2 = %{T2}%{T-}
+ramp-signal-3 = %{T2}%{T-}
+ramp-signal-4 = %{T2}%{T-}
+ramp-signal-5 = %{T2}%{T-}
+
+[module/volume]
+type = internal/volume
+
+[module/spotify]
+type = custom/script
+exec = ~/.config/polybar/spotify-info.sh
+tail = true
+interval = 2
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+label-mounted = %{T2}%{T-}%free%
