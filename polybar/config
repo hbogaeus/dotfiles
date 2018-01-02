@@ -1,6 +1,6 @@
 [colors]
 background = #282828
-primary = #EBDBB2 
+primary = #F9F9F9 
 secondary = #E39453
 
 spotify-underline = 
@@ -34,6 +34,7 @@ battery = BAT1
 adapter = ADP1
 label-charging = %{T2}%{T-}%percentage:2%% 
 label-discharging = %{T2}%{T-}%percentage:2%% 
+label-full = 
 
 [module/date]
 type = internal/date
@@ -46,6 +47,7 @@ label = %{T2}%{T-}%date% %{T2}%{T-}%time%
 type = internal/i3
 enable-scroll = false
 label-focused-underline = ${colors.secondary}
+label-urgent-underline = ${colors.secondary}
 pin-workspaces = true
 strip-wsnumbers = true
 

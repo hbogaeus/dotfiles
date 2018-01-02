@@ -8,16 +8,17 @@ URxvt.resize-font.bigger: C-Up
 ! font
 ! URxvt*font: xft:Fantasque Sans Mono:Regular:size=9:antialias=true:hinting=true
 ! URxvt*font: xft:Inconsolata:size=8:antialias=true:hinting=true
-URxvt*font: xft:Inconsolata:size=8:antialias=false:hinting=false
+! URxvt*font: xft:Inconsolata:size=8:antialias=false:hinting=false
+ URxvt*font: xft:Input:size=8:antialias=false:hinting=false
 ! URxvt.font: xft:Source Code Pro:Regular:size=9:antialias=true:hinting=true
 
 ! terminal padding
 URxvt.internalBorder: 5
 
 ! Make it blurry
-URxvt.transparent:	true
+! URxvt.transparent:	true
 ! URxvt.shading:			50	
-URxvt.blurRadius:		7
+! URxvt.blurRadius:		7
 ! URxvt.fading:				20
 
 ! make otf / ttf fonts look pretty.  does not matter if you are using a bitmap font.
