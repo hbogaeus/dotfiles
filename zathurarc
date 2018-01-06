@@ -1,0 +1,18 @@
+# Maps z and w to work as in less
+unmap z
+unmap w
+map z navigate next
+map w navigate previous
+
+map S toggle_statusbar
+
+# Smooth scroll with touchpad
+set smooth-scroll         true
+# Replace home dir with ~
+set statusbar-home-tilde  true
+
+set default-bg    "#282828"
+set statusbar-bg  "#282828"
+
+# Turn off show recent
+# set show-recent 0
